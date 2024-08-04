@@ -1,0 +1,301 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5a9b8, #b3cee5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 1000px;
+}
+
+.scene {
+    width: 300px;
+    height: 500px;
+    perspective: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card__face--front {
+    background: white;
+}
+
+.card__face--back {
+    background: white;
+    transform: rotateY(180deg);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .shop-header {
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.pet-name, .shop-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.pet-avatar {
+    font-size: 80px;
+    text-align: center;
+    margin: 20px 0;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-10px); }
+}
+
+.stats {
+    padding: 0 20px;
+}
+
+.stat {
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.stat-icon {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.stat-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.health-fill { background-color: #ff6b6b; }
+.hunger-fill { background-color: #feca57; }
+.happiness-fill { background-color: #48dbfb; }
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+button {
+    flex: 1 0 calc(50% - 5px);
+    padding: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    min-width: 0;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#feedBtn { background-color: #feca57; }
+#feedBtn:hover:not(:disabled) { background-color: #ff9f43; }
+#playBtn { background-color: #48dbfb; }
+#playBtn:hover:not(:disabled) { background-color: #0abde3; }
+#newPetBtn { background-color: #ff6b6b; }
+#newPetBtn:hover { background-color: #ee5253; }
+#shareBtn { background-color: #54a0ff; }
+#shareBtn:hover { background-color: #2e86de; }
+
+.button-icon {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.limits {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.flip-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.coin-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.coin-emoji {
+    font-size: 48px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.coin-emoji:active {
+    transform: scale(0.95);
+}
+
+.coin-count {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.shop-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.shop-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop-button:hover {
+    background-color: #45a049;
+}
+
+.shop-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.particle {
+    position: absolute;
+    background-color: gold;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.pet-age {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.pet-dead .card__face--front {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+#newPetBtn:disabled {
+    opacity: 1;
+    cursor: pointer;
+}
+.speech-bubble {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    max-width: 120px;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: fadeInOut 1.5s ease-in-out;
+    pointer-events: none;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: white transparent;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+.max-action-message {
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #ffe0e0;
+    border-radius: 5px;
+    display: none;
+}

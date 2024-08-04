@@ -1,0 +1,28 @@
+{
+    "general": [
+      "I love you!",
+      "You're the best!",
+      "What a lovely day!",
+      "Wanna hang out?",
+      "I'm so happy!",
+      "You make me smile!",
+      "Life is good!",
+      "Cuddle time?",
+      "You're awesome!",
+      "Let's have fun!"
+    ],
+    "hungry": [
+      "I'm hungry!",
+      "Feed me, please!",
+      "My tummy's rumbling!",
+      "Got any snacks?",
+      "Food time?"
+    ],
+    "playful": [
+      "Let's play!",
+      "I'm bored!",
+      "Wanna play a game?",
+      "Play with me!",
+      "I need some fun!"
+    ]
+  }

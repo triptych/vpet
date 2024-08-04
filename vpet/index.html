@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="card">
+            <div class="card__face card__face--front">
+                <div class="container">
+                    <div class="header">
+                        <h1 class="pet-name" id="petName"></h1>
+                    </div>
+                    <div class="pet-avatar" id="petAvatar"></div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-label"><span class="stat-icon">❤️</span> Health</div>
+                            <div class="stat-bar"><div class="stat-fill health-fill" id="healthBar"></div></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label"><span class="stat-icon">🍽️</span> Hunger</div>
+                            <div class="stat-bar"><div class="stat-fill hunger-fill" id="hungerBar"></div></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label"><span class="stat-icon">😊</span> Happiness</div>
+                            <div class="stat-bar"><div class="stat-fill happiness-fill" id="happinessBar"></div></div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button id="feedBtn"><span class="button-icon">🍖</span>Feed</button>
+                        <button id="playBtn"><span class="button-icon">🎾</span>Play</button>
+                        <button id="newPetBtn"><span class="button-icon">🆕</span>New</button>
+                        <button id="shareBtn"><span class="button-icon">📤</span>Share</button>
+                    </div>
+                    <div class="limits">
+                        <span id="feedLimit"></span> | <span id="playLimit"></span>
+                    </div>
+                </div>
+                <div class="flip-icon">🔄</div>
+            </div>
+            <div class="card__face card__face--back">
+                <div class="container">
+                    <div class="shop-header">
+                        <h2>Pet Shop</h2>
+                    </div>
+                    <div class="coin-display">
+                        <div id="coinEmoji" class="coin-emoji">🪙</div>
+                        <div id="coinCount" class="coin-count">0/100</div>
+                    </div>
+                    <div class="shop-items">
+                        <button id="buyFeedBtn" class="shop-button">Buy Feed (100 coins)</button>
+                        <button id="buyPlayBtn" class="shop-button">Buy Play (100 coins)</button>
+                    </div>
+                    <div id="petAge" class="pet-age"></div>
+                    <div id="maxActionMessage" class="max-action-message"></div>
+                </div>
+                <div class="flip-icon">🔄</div>
+            </div>
+        </div>
+    </div>
+    <div id="particles"></div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
